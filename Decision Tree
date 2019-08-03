@@ -1,0 +1,32 @@
+What are Decision Trees?
+(Source: https://blog.goodaudience.com/introduction-to-random-forest-algorithm-with-python-9efd1d8f0157)
+
+Decision trees are predictive models that use a set of binary rules to calculate a target value
+There are two types of decision trees
+classification and 
+regression trees
+
+Classification trees are used to create categorical data sets such as land cover classification
+Regression trees are used to create continuous data sets such as biomass and percent tree cover.
+Each individual tree is a fairly simple model that has branches, nodes and leaves.
+The nodes contain the attributes the objective function depends on
+
+Important Terminology related to Decision Trees
+Let’s look at the basic terminology used with decision trees and random forests :
+
+Root Node: It represents entire population or sample and this further gets divided into two or more homogeneous sets
+
+Splitting: It is a process of dividing a node into two or more sub-nodes
+
+Decision Node: When a sub-node splits into further sub-nodes, then it is called decision node
+
+Leaf/ Terminal Node: Nodes do not split is called Leaf or Terminal node
+
+Pruning: When we remove sub-nodes of a decision node, this process is called pruning. You can say opposite process of splitting
+
+Branch / Sub-Tree: A sub section of entire tree is called branch or sub-tree
+
+Parent and Child Node: A node, which is divided into sub-nodes is called parent node of sub-nodes 
+where as sub-nodes are the child of parent node
+
+
