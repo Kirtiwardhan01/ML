@@ -1,1 +1,50 @@
 # ML
+What is machine learning?
+Machine learning is the idea that there are generic algorithms that can tell you something interesting about a set of data without you having to write any custom code specific to the problem. 
+
+Instead of writing code, you feed data to the generic algorithm and it builds its own logic based on the data
+
+For example, one kind of algorithm is a classification algorithm
+It can put data into different groups. The same classification algorithm used to recognize handwritten numbers could also be used to classify emails into spam and not-spam without changing a line of code. 
+It’s the same algorithm but it’s fed different training data so it comes up with different classification logic
+
+“Machine learning” is 
+an umbrella term covering lots of these kinds of generic algorithms
+
+Two kinds of Machine Learning Algorithms
+1.  supervised learning 
+2.  unsupervised learning
+
+Supervised Learning
+Let’s say you are a real estate agent. Your business is growing, so you hire a bunch of new trainee agents to help you out. 
+But there’s a problem — you can glance at a house and have a pretty good idea of what a house is worth, but your trainees don’t have your experience so they don’t know how to price their houses
+
+To help your trainees you decide to write a little app that can estimate the value of a house in your area based on it’s size, neighborhood, etc, and what similar houses have sold for
+
+So you write down every time someone sells a house in your city for 3 months. For each house, you write down a bunch of details — number of bedrooms, size in square feet, neighborhood, etc. But most importantly, you write down the final sale price
+
+              bedrooms        size in square feet     neighborhood        Sale Price
+                 3                   2000               Normaltown          $250,000
+                 2                    800               Hipsterton          $300,000 
+                 2                    850               Normaltown          $150,000 
+                 1                    550               Normaltown          $750,00 
+                 
+                              This is our “training data.”
+                              
+Using that training data, we want to create a program that can estimate how much any other house in your area is worth
+
+               bedrooms        size in square feet     neighborhood        Sale Price
+                 3                   2000              Hipsterton           ???????
+                 
+                    We want to use the training data to predict the "prices" of other houses
+                    
+This is called supervised learning. You knew how much each house sold for, so in other words, you knew the answer to the problem and could work backwards from there to figure out the logic
+
+To build your app, you feed your training data about each house into your machine learning algorithm. 
+The algorithm is trying to figure out what kind of math needs to be done to make the numbers work out.
+
+In supervised learning, you are letting the computer work out that relationship for you. And once you know what math was required to solve this specific set of problems, you could answer to any other problem of the same type
+
+
+
+                 
