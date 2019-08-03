@@ -44,7 +44,9 @@ This is called supervised learning. You knew how much each house sold for, so in
 To build your app, you feed your training data about each house into your machine learning algorithm. 
 The algorithm is trying to figure out what kind of math needs to be done to make the numbers work out.
 
-In supervised learning, you are letting the computer work out that relationship for you. And once you know what math was required to solve this specific set of problems, you could answer to any other problem of the same type
+In supervised learning, you are letting the computer work out that relationship for you. 
+And once you know what math was required to solve this specific set of problems, 
+you could answer to any other problem of the same type
 
 
 
