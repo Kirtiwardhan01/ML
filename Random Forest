@@ -1,3 +1,32 @@
+(Source: https://blog.goodaudience.com/introduction-to-random-forest-algorithm-with-python-9efd1d8f0157)
+
 Random forest algorithm has become the most common algorithm to be used in ML competitions like Kaggle competitions
 If you ever search for an easy to use and accurate ML algorithm, you will absolutely get random forest in the top results. 
 To understand Random forest algorithm you have to be familiar with decision trees at first
+
+What is Random Forest?
+As Leo Breiman defined it in the research paper, “ Random forests are a combination of tree predictors such that 
+each tree depends on the values of a random vector sampled independently and with the same distribution for all trees in the forest ”
+
+Another definition “A random forest is a classifier consisting of a collection of tree structured classifiers {h(x,Θk ), k=1, …} 
+where the {Θk} are independent identically distributed random vectors and each tree casts a unit vote for the most popular class 
+at input x ” 
+
+Briefly, Random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction
+
+Advantages of Random Forests
+It can be used for both classification and regression problems
+
+Reduction in overfitting: by averaging several trees, there is a significantly lower risk of overfitting
+
+Random forests make a wrong prediction only when more than half of the base classifiers are wrong
+
+It is very easy to measure the relative importance of each feature on the prediction
+Sklearn as example has powerful library to do that
+Because of that, it is more accurate than most of the other algorithms
+
+Disadvantages of Random Forests
+Random forests have been observed to overfit for some datasets with noisy classification/regression tasks
+
+It’s more complex and computationally expensive than decision tree algorithm
+
