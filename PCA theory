@@ -1,0 +1,9 @@
+PCA is essentially a method that reduces the dimension of the feature space in such a way that new variables are orthogonal to each other 
+(i.e. they are independent or not correlated)
+
+Before applying PCA, we scale our data such that each feature has unit variance. 
+This is necessary because fitting algorithms highly depends on the scaling of the features. 
+
+Here we use the StandardScalermodule 
+for scaling the features individually
+StandardScalersubtracts the mean from each features and then scale to unit variance
