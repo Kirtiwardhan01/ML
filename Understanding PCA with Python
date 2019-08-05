@@ -80,3 +80,42 @@ X_scaled
 print("after scaling minimum", X_scaled.min(axis=0))
 print("after scaling maximum", X_scaled.max(axis=0))
 
+from sklearn.decomposition import PCA
+pca = PCA(n_components=3)
+
+X_pca = pca.fit_transform(X_scaled)
+X_pca.shape
+
+#You can check by measuring the variance ratio of the principal components 
+ex_variance=np.var(X_pca,axis=0)
+ex_variance_ratio = ex_variance/np.sum(ex_variance)
+ex_variance_ratio  #first 2 components contributes to 87% of the total variance
+
+#Now, since the PCA components are orthogonal to each other and they are not correlated, 
+#we can expect to see malignant and benign classes as distinct
+
+Xax=X_pca[:,0]
+Yax=X_pca[:,1]
+
+labels=cancer.target
+cdict={0:'red',1:'green'}
+labl={0:'Malignant',1:'Benign'}
+marker={0:'*',1:'o'}
+alpha={0:.3, 1:.5}
+fig,ax=plt.subplots(figsize=(7,5))
+fig.patch.set_facecolor('white')
+
+for l in np.unique(labels):
+ ix=np.where(labels==l)
+ ax.scatter(Xax[ix],Yax[ix],c=cdict[l],s=40,
+           label=labl[l],marker=marker[l],alpha=alpha[l])
+# for loop ends
+plt.xlabel("First Principal Component",fontsize=14)
+plt.ylabel("Second Principal Component",fontsize=14)
+plt.legend()
+plt.show()
+
+# please check the scatter plot of the remaining component and you will understand the difference
+
+
+
