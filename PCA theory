@@ -7,3 +7,9 @@ This is necessary because fitting algorithms highly depends on the scaling of th
 Here we use the StandardScalermodule 
 for scaling the features individually
 StandardScalersubtracts the mean from each features and then scale to unit variance
+
+Now we’re ready to apply PCA on this scaled data-set. 
+We start as before with StandardScaler, where we instantiate, then fit and finally transform the scaled data. 
+While applying PCA you can mention how many principal components you want to keep
+
+
