@@ -12,4 +12,10 @@ Now we’re ready to apply PCA on this scaled data-set.
 We start as before with StandardScaler, where we instantiate, then fit and finally transform the scaled data. 
 While applying PCA you can mention how many principal components you want to keep
 
+Why PCA rather than just feature analysis ? (Answer hints: large data-set, many features, let’s reduce dimension of feature space)
+We started our example with cancer data-set and found 30 features with 2 classes.
+To apply PCA on this data-set, first we scale all the features and then apply fit_transformmethod of PCA (with 3 principal components) 
+on the scaled features.
+We show that out of those 3 principal components, 2 contribute to 87% of the total variance.
+Based on these 2 principal components we visualize the data and see very clear separation between ‘Malignant’ and ‘Benign’ classes
 
