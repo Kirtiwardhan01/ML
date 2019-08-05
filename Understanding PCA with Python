@@ -49,3 +49,34 @@ ax[0].legend(['malignant','benign'],loc='best',fontsize=8)
 plt.tight_layout()# let's make good plots
 plt.show()
 
+#Before using PCA to these cancer data-set, let’s understand very simply what PCA actually does
+#We know that in a data-set there are high possibilities for some features to be correlated
+#Let’s see some example plots from cancer data set 
+
+cancer_df=pd.DataFrame(cancer.data,columns=cancer.feature_names)# just convert the scikit learn data-set to pandas data-frame.
+plt.subplot(1,2,1)#first plot
+
+plt.scatter(cancer_df['worst symmetry'], cancer_df['worst texture'], s=cancer_df['worst area']*0.05, 
+            color='magenta', label='check', alpha=0.3)
+plt.xlabel('Worst Symmetry',fontsize=12)
+plt.ylabel('Worst Texture',fontsize=12)
+
+plt.subplot(1,2,2)# 2nd plot
+plt.scatter(cancer_df['mean radius'], cancer_df['mean concave points'], s=cancer_df['mean area']*0.05, 
+            color='purple', label='check', alpha=0.3)
+plt.xlabel('Mean Radius',fontsize=12)
+plt.ylabel('Mean Concave Points',fontsize=12)
+plt.tight_layout()
+plt.show()
+
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+
+## compute the mean and standard which will be used in the next command
+X_scaled = scaler.fit_transform(cancer.data)
+X_scaled
+
+## we can check the minimum and maximum of the scaled features which we expect to be 0 and 1
+print("after scaling minimum", X_scaled.min(axis=0))
+print("after scaling maximum", X_scaled.max(axis=0))
+
