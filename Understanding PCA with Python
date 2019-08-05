@@ -1,1 +1,51 @@
+(Source: https://towardsdatascience.com/dive-into-pca-principal-component-analysis-with-python-43ded13ead21)
+ 
+ Understanding PCA with Python
+ Feeling lost in deciding which features to choose so that your model is safe from overfitting?
+ Well, PCA can surely in that case
+ 
+ In this meditation we will go through a simple explanation of principal component analysis on cancer data-set and 
+ see examples of feature space dimension reduction to data visualization
+ 
+import pandas as pd
+import numpy as np
+import matplotlib as mpl
+import seaborn as sns
+
+from sklearn.datasets import load_breast_cancer
+cancer = load_breast_cancer()
+
+Sometimes it’s better to know about the data that you’re using and 
+we can use DESCR to know the basic description of the data-set
+
+print(cancer.DESCR)
+
+From this you now know that this data-set has 30 features like smoothness, radius etc. The number of instances are 569 and 
+out of them 212 are malignant and 357 are benign. The target variables are listed as 0 and 1
+
+To know more about how the features affect the target, we can plot histograms of malignant and benign classes. 
+If the two histograms are separated based on the feature, then we can say that the feature is important to discern the instances
+
+import numpy as np
+import matplotlib.pyplot as plt 
+# from matplotlib.pyplot import matplotlib
+
+fig,axes =plt.subplots(10,3, figsize=(12, 9)) # 3 columns each containing 10 figures, total 30 features
+malignant=cancer.data[cancer.target==0] # define malignant
+benign=cancer.data[cancer.target==1] # define benign
+ax=axes.ravel()# flat axes with numpy ravel
+
+for i in range(30):
+  _,bins=np.histogram(cancer.data[:,i],bins=40)
+  ax[i].hist(malignant[:,i],bins=bins,color='r',alpha=.5)# red color for malignant class
+  ax[i].hist(benign[:,i],bins=bins,color='g',alpha=0.3)# alpha is for transparency in the overlapped region 
+
+  ax[i].set_title(cancer.feature_names[i],fontsize=9)
+  ax[i].axes.get_xaxis().set_visible(False) # the x-axis co-ordinates are not so useful, 
+#as we just want to look how well separated the histograms are
+ 
+ax[i].set_yticks(())
+ax[0].legend(['malignant','benign'],loc='best',fontsize=8)
+plt.tight_layout()# let's make good plots
+plt.show()
 
