@@ -1,0 +1,9 @@
+(Source: https://medium.com/machine-learning-for-humans/supervised-learning-740383a2feab)
+
+Overfitting
+A common problem in machine learning is overfitting: 
+Overfitting happens when a model overlearns from the training data to the point that it starts picking up 
+idiosyncrasies that aren’t representative of patterns in the real world. 
+This becomes especially problematic as you make your model increasingly complex. 
+Underfitting is a related issue where your model is not complex enough to capture the underlying trend in the data
+
