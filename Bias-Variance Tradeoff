@@ -1,0 +1,11 @@
+Bias-Variance Tradeoff
+Bias is the amount of error introduced by approximating real-world phenomena with a simplified model
+
+Variance is how much your model's test error changes based on variation in the training data. 
+It reflects the model's sensitivity to the idiosyncrasies of the data set it was trained on
+
+As a model increases in complexity and it becomes more wiggly (flexible), 
+its bias decreases (it does a good job of explaining the training data), 
+but variance increases (it doesn't generalize as well). 
+
+Ultimately, in order to have a good model, you need one with low bias and low variance
