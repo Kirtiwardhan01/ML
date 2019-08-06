@@ -1,0 +1,13 @@
+To find the best parameters:
+1. Define a cost function, or loss function, that measures how inaccurate our model’s predictions are
+2. Find the parameters that minimize loss, i.e. make our model as accurate as possible
+
+Graphically, in two dimensions, this results in a line of best fit. 
+In three dimensions, we would draw a plane, and so on with higher-dimensional hyperplanes
+
+For a simple problem like this, we can compute a closed form solution using calculus to find the optimal beta parameters that 
+minimize our loss function. 
+But as a cost function grows in complexity, finding a closed form solution with calculus is no longer feasible
+
+This is the motivation for an iterative approach called gradient descent, which allows us to minimize a complex loss function
+
