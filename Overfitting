@@ -7,3 +7,13 @@ idiosyncrasies that aren’t representative of patterns in the real world.
 This becomes especially problematic as you make your model increasingly complex. 
 Underfitting is a related issue where your model is not complex enough to capture the underlying trend in the data
 
+Remember that the only thing we care about is how the model performs on test data. 
+You want to predict which emails will be marked as spam before they’re marked, 
+not just build a model that is 100% accurate at reclassifying the emails it used to build itself in the first place
+
+Two ways to combat overfitting:
+1. Use more training data. The more you have, the harder it is to overfit the data by learning too much from any single training example.
+2. Use regularization. Add in a penalty in the loss function for building a model that assigns too much explanatory power 
+to any one feature or allows too many features to be taken into account
+
+
