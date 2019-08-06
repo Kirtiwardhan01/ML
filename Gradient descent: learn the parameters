@@ -1,0 +1,39 @@
+(Source: https://medium.com/machine-learning-for-humans/supervised-learning-740383a2feab)
+
+Gradient descent: learn the parameters
+“Put on a blindfold, take a step downhill. You’ve found the bottom when you have nowhere to go but up.”
+
+Gradient descent will come up over and over again, especially in neural networks
+Machine learning libraries like scikit-learn and TensorFlow use it in the background everywhere, so it’s worth understanding the details
+
+The goal of gradient descent is to find the minimum of our model’s loss function by iteratively 
+getting a better and better approximation of it
+
+Imagine yourself walking through a valley with a blindfold on. Your goal is to find the bottom of the valley. How would you do it?
+
+A reasonable approach would be to touch the ground around you and move in whichever direction the ground is sloping down most steeply. 
+Take a step and repeat the same process continually until the ground is flat. 
+Then you know you’ve reached the bottom of a valley; 
+if you move in any direction from where you are, you’ll end up at the same elevation or further uphill
+
+Going back to mathematics, the ground becomes our loss function, and 
+the elevation at the bottom of the valley is the minimum of that function
+
+We see that this is really a function of two variables: β0 and β1. 
+All the rest of the variables are determined, since X, Y, and n are given during training. We want to try to minimize this function
+
+The function is f(β0,β1)=z. To begin gradient descent, you make some guess of the parameters β0 and β1 that minimize the function.
+Next, you find the partial derivatives of the loss function with respect to each beta parameter: [dz/dβ0, dz/dβ1]. 
+A partial derivative indicates how much total loss is increased or decreased if you increase β0 or β1 by a very small amount
+
+Put another way, how much would increasing your estimate of annual income assuming zero higher education (β0) increase 
+the loss (i.e. inaccuracy) of your model? 
+You want to go in the opposite direction so that you end up walking downhill and minimizing loss
+
+Similarly, if you increase your estimate of how much each incremental year of education affects income (β1), 
+how much does this increase loss (z)? 
+If the partial derivative dz/β1 is a negative number, then increasing β1 is good because it will reduce total loss. 
+If it’s a positive number, you want to decrease β1. If it’s zero, don’t change β1 because it means you’ve reached an optimum
+
+Keep doing that until you reach the bottom, 
+i.e. the algorithm converged and loss has been minimized. 
