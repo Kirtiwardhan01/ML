@@ -1,5 +1,6 @@
 # ML
-(Source: https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471)
+(Source: https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471 
+https://medium.com/machine-learning-for-humans/supervised-learning-740383a2feab)
 
 What is machine learning?
 Machine learning is the idea that there are generic algorithms that can tell you something interesting about 
@@ -60,6 +61,12 @@ you could answer to any other problem of the same type
 The goal of supervised learning is to predict Y as accurately as possible 
 when given new examples where X is known and Y is unknown
 
+The two tasks of supervised learning: 
+regression and classification
+
+Regression: predict a continuous numerical value. How much will that house sell for?
+
+Classification: assign a label. Is this a picture of a cat or a dog?
 
 
                  
