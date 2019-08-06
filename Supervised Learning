@@ -57,6 +57,9 @@ In supervised learning, you are letting the computer work out that relationship 
 And once you know what math was required to solve this specific set of problems, 
 you could answer to any other problem of the same type
 
+The goal of supervised learning is to predict Y as accurately as possible 
+when given new examples where X is known and Y is unknown
+
 
 
                  
