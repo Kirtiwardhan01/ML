@@ -1,5 +1,6 @@
-Unsupervised Learning
 (Source: https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471)
+
+Unsupervised Learning
 What if you didn’t know the sale price for each house? 
 Even if all you know is the size, location, etc of each house, it turns out you can still do some really cool stuff. 
 This is called unsupervised learning.
@@ -16,13 +17,15 @@ This is called unsupervised learning.
 This is kind of like someone giving you a list of numbers on a sheet of paper and saying “I don’t really know what these numbers mean 
 but maybe you can figure out if there is a pattern or grouping or something — good luck!”
 
-So what could do with this data? For starters, you could have an algorithm that automatically identified different market segments in your data.
+So what could do with this data? 
+For starters, you could have an algorithm that automatically identified different market segments in your data.
 Maybe you’d find out that home buyers in the neighborhood near the local college really like small houses with lots of bedrooms, 
 but home buyers in the suburbs prefer 3-bedroom houses with lots of square footage. 
 Knowing about these different kinds of customers could help direct your marketing efforts
 
 Another cool thing you could do is automatically identify any outlier houses that were way different than everything else. 
-Maybe those outlier houses are giant mansions and you can focus your best sales people on those areas because they have bigger commissions
+Maybe those outlier houses are giant mansions and you can focus your best sales people on those areas because 
+they have bigger commissions
 
 
 
