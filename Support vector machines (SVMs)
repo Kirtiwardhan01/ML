@@ -42,3 +42,7 @@ Basically, we say it’s acceptable but costly to misclassify a point
 We can create nonlinear classifiers by increasing the number of dimensions, i.e. include x², x³, even cos(x), etc. 
 Suddenly, you have boundaries that can look more squiggly when we bring them back to the lower dimensional representation
 
+In summary, SVMs are used for classification with two classes. 
+They attempt to find a plane that separates the two classes cleanly. 
+When this isn’t possible, we either soften the definition of “separate,” or 
+we throw the data into higher dimensions so that we can cleanly separate the data.
