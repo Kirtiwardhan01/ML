@@ -1,0 +1,44 @@
+(Source: https://medium.com/machine-learning-for-humans/supervised-learning-2-5c1c23f3560d?)
+
+Support vector machines (SVMs)
+SVM is the last parametric model we’ll cover. It typically solves the same problem as logistic regression — 
+classification with two classes — and yields similar performance. 
+It’s worth understanding because the algorithm is geometrically motivated in nature, rather than being driven by probabilistic thinking
+
+A few examples of the problems SVMs can solve:
+Is this an image of a cat or a dog?
+Is this review positive or negative?
+Are the dots in the 2D plane red or blue?
+
+We’ll use the third example to illustrate how SVMs work
+
+In this example, we have points in a 2D space (X & Y axis) that are either red or blue, and we’d like to cleanly separate the two
+
+The training set is plotted the graph above. We would like to classify new, unclassified points in this plane. 
+To do this, SVMs use a separating line (or, in more than two dimensions, a multi-dimensional hyperplane) 
+to split the space into a red zone and a blue zone
+
+The distance to the nearest point on either side of the separating line is called the margin, and SVM tries to maximize the margin
+You can think about it like a safety space: the bigger that space, the less likely that noisy points get misclassified
+
+1. How does the math behind this work?
+We want to find the optimal hyperplane (a line, in our 2D example). 
+This hyperplane needs to (1) separate the data cleanly, with blue points on one side of the line and red points on the other side, 
+and (2) maximize the margin. This is an optimization problem. 
+The solution has to respect constraint (1) while maximizing the margin as is required in (2)
+
+The solution hyperplane you end up with is defined in relation to its position with respect to certain x_i’s, 
+which are called the support vectors, and they’re usually the ones closest to the hyperplane
+
+2. What happens if you can’t separate the data cleanly?
+There are two methods for dealing with this problem
+
+2.1. Soften the definition of “separate”.
+We allow a few mistakes, meaning we allow some blue points in the red zone or some red points in the blue zone. 
+We do that by adding a cost C for misclassified examples in our loss function. 
+Basically, we say it’s acceptable but costly to misclassify a point
+
+2.2. Throw the data into higher dimensions.
+We can create nonlinear classifiers by increasing the number of dimensions, i.e. include x², x³, even cos(x), etc. 
+Suddenly, you have boundaries that can look more squiggly when we bring them back to the lower dimensional representation
+
