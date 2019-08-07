@@ -1,0 +1,92 @@
+(Source: https://medium.com/machine-learning-for-humans/supervised-learning-2-5c1c23f3560d?)
+
+Classification: predicting a label
+Is this email spam or not? Is that borrower going to repay their loan? 
+Will those users click on the ad or not? Who is that person in your Facebook picture?
+
+Classification predicts a discrete target label Y. 
+Classification is the problem of assigning new observations to the class to which they most likely belong, based on 
+a classification model built from labeled training data
+
+The accuracy of your classifications will depend on the effectiveness of the algorithm you choose, 
+how you apply it, and how much useful training data you have
+
+                                      training data:        Obs      Input      Label (Y)
+                                                              1       Mail        Spam
+                                                              2       Mail        ham
+                                                              
+                                      test data:            Obs      Input      Label (Y)
+                                                              1       Mail          ?
+                                                              2       Mail          ?  
+
+Logistic regression: 0 or 1?
+Logistic regression is a method of classification: 
+the model outputs the probability of a categorical target variable Y belonging to a certain class
+
+A good example of classification is determining whether a loan application is fraudulent.
+Ultimately, the lender wants to know whether they should give the borrower a loan or not, 
+and they have some tolerance for risk that the application is in fact fraudulent. I
+n this case, the goal of logistic regression is to calculate the probability (between 0% and 100%) that the application is fraud. 
+With these probabilities, we can set some threshold above which we’re willing to lend to the borrower, 
+and below which we deny their loan application or flag the application for further review
+
+Though logistic regression is often used for binary classification where there are two classes, 
+keep in mind that classification can be performed with any number of categories 
+(e.g. when assigning handwritten digits a label between 0 and 9, or 
+using facial recognition to detect which friends are in a Facebook picture)
+
+Can I just use ordinary least squares?
+Nope. If you trained a linear regression model on a bunch of examples where Y = 0 or 1, 
+you might end up predicting some probabilities that are less than 0 or greater than 1, which doesn’t make sense. 
+Instead, we’ll use a logistic regression model (or logit model) which was designed for assigning 
+a probability between 0% and 100% that Y belongs to a certain class
+
+The logit model is a modification of linear regression that makes sure to output a probability between 0 and 1 
+by applying the sigmoid function, which, when graphed, looks like the characteristic S-shaped curve
+
+                                    S(x) = 1/ 1 + e^-x  
+                     (Sigmoid function, which squashes values between 0 and 1)
+                     
+Recall the original form of our simple linear regression model, which we’ll now call g(x) 
+since we’re going to use it within a compound function:
+                                g(x) = β0 + β1x + ϵ
+                                
+Now, to solve this issue of getting model outputs less than 0 or greater than 1, 
+we’re going to define a new function F(g(x)) that transforms g(x) by squashing the output of linear regression 
+to a value in the [0,1] range
+Are you thinking of the sigmoid function? Bam! Presto! You’re correct
+
+So we plug g(x) into the sigmoid function above, resulting in a function of our original function (yes, things are getting meta) 
+that outputs a probability between 0 and 1:
+
+                            P(Y=1) = F(g(x)) = 1 / 1 + e^-(β0 + β1x) 
+            (we’re calculating the probability that the training example belongs to a certain class: P(Y=1))
+
+Here we’ve isolated p, the probability that Y=1, on the left side of the equation. 
+If we want to solve for a nice clean β0 + β1x + ϵ on the right side so we can straightforwardly interpret the beta coefficients 
+we’re going to learn, we’d instead end up with the log-odds ratio, or logit, on the left side — hence the name “logit model”
+
+                    log-odds ratio, or logit model: ln(p/(1-p)) = β0 + β1x + ϵ
+                 (The log-odds ratio is simply the natural log of the odds ratio, p/(1-p))   
+
+The output of the logistic regression model from above looks like an S-curve showing P(Y=1) based on the value of X
+
+To predict the Y label — spam/not spam, cancer/not cancer, fraud/not fraud, etc. — 
+you have to set a probability cutoff, or threshold, for a positive result. 
+For example: “If our model thinks the probability of this email being spam is higher than 70%, label it spam. Otherwise, don’t.”
+The threshold depends on your tolerance for false positives VS false negatives
+
+Minimizing loss with logistic regression
+As in the case of linear regression, we use gradient descent to learn the beta parameters that minimize loss
+
+In logistic regression, the cost function is basically a measure of how often you predicted 1 when the true answer was 0, or vice versa.
+Below is a regularized cost function just like the one we went over for linear regression
+
+                      Cost = Data loss + Regularization loss
+
+The first chunk is the data loss, i.e. how much discrepancy there is between the model’s predictions and reality
+The second chunk is the regularization loss, i.e. how much we penalize the model for having large parameters 
+that heavily weight certain features (remember, this prevents overfitting)
+
+We’ll minimize this cost function with gradient descent, as above, and voilà! 
+we’ve built a logistic regression model to make class predictions as accurately as possible
