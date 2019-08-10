@@ -76,6 +76,10 @@ you have to set a probability cutoff, or threshold, for a positive result.
 For example: “If our model thinks the probability of this email being spam is higher than 70%, label it spam. Otherwise, don’t.”
 The threshold depends on your tolerance for false positives VS false negatives
 
+If you’re diagnosing cancer, you’d have a very low tolerance for false negatives, 
+because even if there’s a very small chance the patient has cancer, you’d want to run further tests to make sure. 
+So you’d set a very low threshold for a positive result
+
 Minimizing loss with logistic regression
 As in the case of linear regression, we use gradient descent to learn the beta parameters that minimize loss
 
