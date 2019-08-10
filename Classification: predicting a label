@@ -89,4 +89,4 @@ The second chunk is the regularization loss, i.e. how much we penalize the model
 that heavily weight certain features (remember, this prevents overfitting)
 
 We’ll minimize this cost function with gradient descent, as above, and voilà! 
-we’ve built a logistic regression model to make class predictions as accurately as possible
+we’ve built a logistic regression model to make class predictions as accurately as possible 
