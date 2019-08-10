@@ -1,0 +1,17 @@
+When should you scale your data? Why?
+
+When your algorithm will weight each input, e.g. gradient descent used by many neural nets, or use distance metrics, 
+e.g. kNN, model performance can often be improved by normalizing, standardizing, or otherwise scaling your data 
+so that each feature is given relatively equal weight
+
+It is also important when features are measured in different units, 
+e.g. feature A is measured in inches, feature B is measured in feet, and feature C is measured in dollars, 
+that they are scaled in a way that they are weighted and/or represented equally
+
+In some cases, efficacy will not change but perceived feature importance may change, e.g. coefficients in a linear regression
+
+Scaling your data typically does not change performance or feature importance for tree-based models 
+since the split points will simply shift to compensate for the scaled data
+
+Python libraries: scikit-learn 
+sklearn.preprocessing import StandardScaler
