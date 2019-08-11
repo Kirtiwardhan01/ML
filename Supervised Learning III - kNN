@@ -1,0 +1,56 @@
+(Source: https://medium.com/machine-learning-for-humans/supervised-learning-3-b1551b9c4930?)
+
+Non-parametric model: k-nearest neighbors (kNN)
+“You are the average of your k closest friends.”
+
+k-NN seems almost too simple to be a machine learning algorithm. 
+The idea is to label a test data point x by finding the mean (or mode) of the k closest data points’ labels.
+
+That’s k-nearest neighbors. You look at the k closest data points and take the average of their values 
+if variables are continuous (like housing prices), 
+or the mode if they’re categorical (like cat vs. dog)
+
+For example If you wanted to guess unknown house prices, you could just take the average of some number of geographically nearby houses, 
+and you’d end up with some pretty nice guesses. 
+These might even outperform a parametric regression model built by some economist that estimates model coefficients for 
+# of beds/baths, nearby schools, distance to public transport, etc
+
+How to use k-NN to predict housing prices:
+1) Store the training data, a matrix X of features like zip code, neighborhood, # of bedrooms, square feet, distance from public transport,
+etc., and a matrix Y of corresponding sale prices
+
+2) Sort the houses in your training data set by similarity to the house in question, based on the features in X. 
+We’ll define “similarity” below
+
+3) Take the mean of the k closest houses. That is your guess at the sale price (i.e. ŷ)
+
+The fact that k-NN doesn’t require a pre-defined parametric function f(X) relating Y to X 
+makes it well-suited for situations where the relationship is too complex to be expressed with a simple linear model
+
+Distance metrics: defining and calculating “nearness”
+How do you calculate distance from the data point in question when finding the “nearest neighbors”? 
+
+The most straightforward measure is Euclidean distance (a straight line, “as the crow flies”). 
+Another is Manhattan distance, like walking city blocks. 
+You could imagine that Manhattan distance is more useful in a model involving fare calculation for Uber drivers, for example
+
+Remember the Pythagorean theorem for finding the length of the hypotenuse of a right triangle?
+                              a^2 + b^2 = c^2
+Solving in terms of c, we find the length of the hypotenuse by taking the square root of the sum of squared lengths of a and b, 
+where a and b are orthogonal sides of the triangle 
+
+This idea of finding the length of the hypotenuse given vectors in two orthogonal directions generalizes to many dimensions, 
+and this is how we derive the formula for Euclidean distance d(p,q) between points p and q in n-dimensional space:
+
+                  d(p,q) = d(q,p) = sqroot(q1 - p1)^2 + (q2 - p2)^2 + ...(qn - pn)^2
+                Formula for Euclidean distance, derived from the Pythagorean theorem
+
+With this formula, you can calculate the nearness of all the training data points to the data point you’re trying to label, 
+and take the mean/mode of the k nearest neighbors to make your prediction
+
+euclidean_dist = numpy.linalg.norm(p-q)
+
+
+
+
+
