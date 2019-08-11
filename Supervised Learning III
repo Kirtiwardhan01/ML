@@ -1,0 +1,12 @@
+(Source: https://medium.com/machine-learning-for-humans/supervised-learning-3-b1551b9c4930?)
+
+Non-parametric models: k-nearest neighbors, decision trees, and random forests. 
+Introducing cross-validation, hyperparameter tuning, and ensemble models
+
+In contrast to the methods we’ve covered so far — linear regression, logistic regression, and SVMs 
+where the form of the model was pre-defined 
+— non-parametric learners do not have a model structure specified a priori. 
+We don’t speculate about the form of the function f that we’re trying to learn before training the model, 
+as we did previously with linear regression. 
+Instead, the model structure is purely determined from the data.
+These models are more flexible to the shape of the training data, but this sometimes comes at the cost of interpretability. 
