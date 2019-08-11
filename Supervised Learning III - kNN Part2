@@ -1,0 +1,30 @@
+Choosing k: tuning hyperparameters with cross-validation
+To decide which value of k to use, you can test different k-NN models using different values of k with cross-validation:
+1. Split your training data into segments, and train your model on all but one of the segments; use the held-out segment as the “test” data.
+2. See how your model performs by comparing your model’s predictions (ŷ) to the actual values of the test data (y).
+3. Pick whichever yields the lowest error, on average, across all iterations.
+
+Higher k prevents overfitting
+Higher values of k help address overfitting, but if the value of k is too high your model will be very biased and inflexible. 
+To take an extreme example: if k = N (the total number of data points), the model would just dumbly blanket-classify all the 
+test data as the mean or mode of the training data
+
+If the single most common animal in a data set of animals is a Scottish Fold kitten, 
+k-NN with k set to N (the # of training observations) would then predict that every other animal in the world 
+is also a Scottish Fold kitten
+
+Where to use k-NN in the real world
+Some examples of where you can use k-NN:
+
+Classification: fraud detection. The model can update virtually instantly with new training examples 
+since you’re just storing more data points, which allows quick adaptation to new methods of fraud
+
+Regression: predicting housing prices. In housing price prediction, literally being a “near neighbor” is actually a good indicator 
+of being similar in price. k-NN is useful in domains where physical proximity matters
+
+Imputing missing training data. If one of the columns in your .csv has lots of missing values, 
+you can impute the data by taking the mean or mode. 
+k-NN could give you a somewhat more accurate guess at each missing value.
+
+
+
