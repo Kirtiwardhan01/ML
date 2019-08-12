@@ -7,3 +7,34 @@
 #convert it into pandas dataframe 
 #find the intercept, coefficients, score, (regression) and confusion matrix (classification)
 #accuracy of the model
+
+For example
+
+Read the file
+        
+	Separate X variables and target variable from the dataset 
+
+	For example: cancer_x=cancer.iloc[:,[2,3,4,5,6,7,8,9,10]] 
+		     cancer_y=cancer.iloc[:,11]	
+
+	scaler_cancer_x = scaler.fit_transform(cancer_x)
+
+	x_pca1=pca.fit_transform(scaler_cancer_x)
+
+	pca.explained_variance_ratio_
+
+	pca2=pd.DataFrame(x_pca1)
+
+	pca2.rename(columns={pca2.columns[0]:"PC1",pca2.columns[1]:"PC2",pca2.columns[2]:"PC3",
+           pca2.columns[3]:"PC4",pca2.columns[4]:"PC5",pca2.columns[5]:"PC6",pca2.columns[6]:"PC7",
+           pca2.columns[7]:"PC8",pca2.columns[8]:"PC9"},inplace=True)
+
+	pca3=pca2.iloc[:,[0,1,2,3,4,5]]
+
+	dtree.fit(pca3,cancer_y)
+
+	pca3_pred_value=dtree.predict(pca3)
+
+	pca3_confusion_matrix=confusion_matrix(pca3_pred_value,cancer_y)
+
+	pca3_confusion_matrix.diagonal().sum()/pca3_confusion_matrix.sum()*100 
