@@ -1,0 +1,34 @@
+(Source: https://medium.com/machine-learning-for-humans/supervised-learning-3-b1551b9c4930?)
+
+Random forest: an ensemble of decision trees
+A model comprised of many models is called an ensemble model, and this is usually a winning strategy.
+A single decision tree can make a lot of wrong calls because it has very black-and-white judgments. 
+A random forest is a meta-estimator that aggregates many decision trees, with some helpful modifications
+
+1. The number of features that can be split on at each node is limited to some percentage of the total 
+(this is a hyperparameter you can choose — see scikit-learn documentation for details). 
+This ensures that the ensemble model does not rely too heavily on any individual feature, 
+and makes fair use of all potentially predictive features
+
+2. Each tree draws a random sample from the original data set when generating its splits, 
+adding a further element of randomness that prevents overfitting
+
+These modifications also prevent the trees from being too highly correlated. 
+Without #1 and #2 above, every tree would be identical, since recursive binary splitting is deterministic
+
+The decision tree classifiers can be aggregated into a random forest ensemble which combines their input. 
+Think of the horizontal and vertical axes of each decision tree output as features x1 and x2. 
+At certain values of each feature, the decision tree outputs a classification of “blue”, “green”, “red”, etc (eg)
+
+These results are aggregated, through modal votes or 
+averaging,into a single ensemble model that ends up outperforming any individual decision tree’s output
+
+Random forests are an excellent starting point for the modeling process, 
+since they tend to have strong performance with a high tolerance for less-cleaned data and can be useful for 
+figuring out which features actually matter among many features.
+
+There are many other clever ensemble models that combine decision trees and yield excellent performance — 
+check out XGBoost (Extreme Gradient Boosting) as an example
+
+
+
