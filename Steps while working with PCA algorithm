@@ -1,0 +1,9 @@
+#For regression and classification based problems
+#While working with PCA algorithm, separate X variables from the target Y variable (Say bf_x, bf_y)
+#Then x_scaled = scaler.(fit_tranform bf_x) and then 
+# apply pca.fit_tranform(x_scaled)
+#based on the variance ratio select the no. of features that add upto 95% variance
+#then using the suitable algorithm build the model and predict the values
+#convert it into pandas dataframe 
+#find the intercept, coefficients, score, (regression) and confusion matrix (classification)
+#accuracy of the model
