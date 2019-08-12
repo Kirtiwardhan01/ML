@@ -9,3 +9,28 @@ For every split at a parent node, you want the child nodes to be as pure as poss
 For example, 
 in the Titanic, gender is a big determinant of survival, so it makes sense for this feature to be used in the first split 
 as it’s the one that leads to the most information gain
+
+The Titanic example is solving a classification problem (“survive” or “die”). 
+
+If we were using decision trees for regression — say, to predict housing prices — 
+we would create splits on the most important features that determine housing prices. 
+How many square feet: more than or less than ___? 
+How many bedrooms & bathrooms: more than or less than ___?
+
+Then, during testing, you would run a specific house through all the splits and 
+take the average of all the housing prices in the final leaf node (bottom-most node) 
+where the house ends up as your prediction for the sale price
+
+There are a few hyperparameters you can tune with decision trees models, 
+including max_depth and max_leaf_nodes. 
+See the scikit-learn module on decision trees for advice on defining these parameters
+
+Decision trees are effective because they are easy to read, powerful even with messy data, 
+and computationally cheap to deploy once after training. 
+Decision trees are also good for handling mixed data (numerical or categorical)
+
+That said, decision trees are computationally expensive to train, carry a big risk of overfitting, 
+and tend to find local optima because they can’t go back after they have made a split. 
+To address these weaknesses, we turn to a method that illustrates the power of combining many decision trees into one model (RandomForest)
+
+
