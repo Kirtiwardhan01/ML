@@ -1,0 +1,11 @@
+(Source: https://medium.com/machine-learning-for-humans/supervised-learning-3-b1551b9c4930?)
+
+Choosing splits in a decision tree
+Entropy is the amount of disorder in a set (measured by Gini index or cross-entropy). 
+If the values are really mixed, there’s lots of entropy; 
+if you can cleanly split values, there’s no entropy. 
+For every split at a parent node, you want the child nodes to be as pure as possible — minimize entropy. 
+
+For example, 
+in the Titanic, gender is a big determinant of survival, so it makes sense for this feature to be used in the first split 
+as it’s the one that leads to the most information gain
