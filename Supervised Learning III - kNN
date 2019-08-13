@@ -1,5 +1,7 @@
 (Source: https://medium.com/machine-learning-for-humans/supervised-learning-3-b1551b9c4930?)
 
+(https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
+
 Non-parametric model: k-nearest neighbors (kNN)
 “You are the average of your k closest friends.”
 
