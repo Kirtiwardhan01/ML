@@ -1,0 +1,33 @@
+(Source: https://medium.com/ml-byte/rare-feature-engineering-techniques-for-machine-learning-competitions-de36c7bb418f)
+
+Label Encoding, One-Hot Encoding, Binning, Mean Encoding
+
+Mean Encoding
+When target’s value counts from the training data is used to replace the categorical values its called Target Encoding. 
+When a statistical measure like mean is used to encode categorical values then its Mean Encoding
+
+ feature_label is simply Label Encoding implementation of scikit-learn library
+ 
+ feature_mean is the
+    No. of true targets under the label Moscow / Total Number of targets under the label Moscow (example : Moscow)
+    
+    
+
+When is Mean-Encoding preferred over other encoding methods?
+In case of a high cardinal features, mean encoding could prove to be a much simpler alternative
+
+## High Cardinality : When number of unique elements of a column is significanltly high 
+
+
+When is Mean-Encoding preferred over other encoding methods?
+In such case, the label encoding will result in continuous numbers till the range of the cardinality. 
+Thus, adding noisy labels and encodings to the feature resulting in poor accuracies. 
+And, the condition worsens for one-hotencoding as the dimensionality of the dataset increases with one-hot encoded features. 
+In such scenario, mean encoding are a way to go
+
+There are various other implementations of the mean encoding. 
+Mean encoding are prone to overfitting to trainset because we are leaking enough information of target 
+in terms of means while encoding our categorical features. 
+The practical method to benefit from target encoding is to use it along a proper regularization technique
+
+Regularization using CV loop methods (KFold Method)
