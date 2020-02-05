@@ -19,3 +19,11 @@ on the scaled features.
 We show that out of those 3 principal components, 2 contribute to 87% of the total variance.
 Based on these 2 principal components we visualize the data and see very clear separation between ‘Malignant’ and ‘Benign’ classes
 
+One final word of caution
+When performing PCA, it is typically a good idea to normalize the data first. 
+Because PCA seeks to identify the principal components with the highest variance,
+if the data is not properly normalized, attributes with large values and large variances (in absolute terms) 
+will end up dominating the first principal component when they should not. 
+Normalizing the data gets each attribute onto more or less the same scale, 
+so that each attribute has an opportunity to contribute to the principal component analysis.
+
